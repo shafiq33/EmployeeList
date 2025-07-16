@@ -13,5 +13,7 @@ public interface EmployeeService {
   Employee createEmployee(Employee employee);
 
   Employee updateEmployee(Employee employee);
+
+  String deleteEmployee(Employee employee);
   
 }
