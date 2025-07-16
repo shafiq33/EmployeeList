@@ -8,6 +8,8 @@ public interface EmployeeService {
   
   List<Employee> fetchAllEmployees();
 
-  Employee findbyId(Long id); 
+  Employee findbyId(Long id);
+
+  Employee createEmployee(Employee employee);
   
 }
