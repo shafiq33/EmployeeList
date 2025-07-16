@@ -11,5 +11,7 @@ public interface EmployeeService {
   Employee findbyId(Long id);
 
   Employee createEmployee(Employee employee);
+
+  Employee updateEmployee(Employee employee);
   
 }
