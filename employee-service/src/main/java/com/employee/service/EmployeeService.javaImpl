@@ -1,7 +1,9 @@
 package com.employee.service;
 
+import java.util.List;
+
 import org.springframework.sterotype.Service;
-import org.springframework.beans.factory.annotations.AutoWired.;
+import org.springframework.beans.factory.annotations.Autowired.;
 
 import com.employee.entity.Employee;
 import com.employee.repository/EmployeeRepository;
@@ -14,7 +16,7 @@ public class EmployeeServiceImpl implements EmployeeService {
   
   @Override 
   public List<Employee> fetchAllEmployees() {
-    return employeeRepository.findAll();
+    return (List<Employee>) employeeRepository.findAll();
   }
 
    @Override 
@@ -27,16 +29,11 @@ public class EmployeeServiceImpl implements EmployeeService {
       return employeeRepository.save(employee);  
   } 
 
-  @Override 
-    public Employee updateEmployee(Employee employee) {
-      return employeeRepository.save(employee);  
-  } 
-
 
     @Override 
     public Employee updateEmployee(Employee employee) {
 
-      Employee empObj = employeeRepository.findById(employee.getId().get());
+      Employee empObj = employeeRepository.findById(employee.getId()).get();
       if(empObj != null) {
         empObj.setEmail(employee.getEmail());
         empObj.setName(employee.getName());
@@ -49,11 +46,11 @@ public class EmployeeServiceImpl implements EmployeeService {
   @Override 
     public String deleteEmployee(Long id) {
 
-      Employee empObj = employeeRepository.findById(employee.getId().get());
+      Employee empObj = employeeRepository.findById(employee.getId()).get();
       String deleteMsg = null;
       if(empObj != null) {
         employeeRepository.delete(employee);
-        deleteMsg = "Employee Deleted Sucessfuly for id: " + id;
+        deleteMsg = "Employee Deleted Sucessfully for id: " + id;
       }
       return deleteMsg;
       
