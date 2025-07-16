@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -30,5 +31,10 @@ public class EmployeeController {
   public ResponseEntity<List<Employee>> updateEmployee(@PathVariable("id") Long id, @Requestbody Employee employee) {
       return ResponseEntity.ok(employeeService.updateEmployee());
   }
-  
+
+
+  @DeleteMapping("/api/v1/employees")
+  public ResponseEntity<List<Employee>> updateEmployee(@PathVariable("id") Long id) {
+      return ResponseEntity.ok(employeeService.deleteEmployee(id));
+  }
 }
