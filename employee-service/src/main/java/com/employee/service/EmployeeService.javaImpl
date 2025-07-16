@@ -1,6 +1,10 @@
 package com.employee.service;
 
-import org.springframework.sterotype.Service; 
+import org.springframework.sterotype.Service;
+import org.springframework.beans.factory.annotations.AutoWired.;
+
+import com.employee.entity.Employee;
+import com.employee.repository/EmployeeRepository;
 
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
@@ -23,9 +27,23 @@ public class EmployeeServiceImpl implements EmployeeService {
       return employeeRepository.save(employee);  
   } 
 
-    @Override 
+  @Override 
     public Employee updateEmployee(Employee employee) {
       return employeeRepository.save(employee);  
+  } 
+
+
+    @Override 
+    public Employee updateEmployee(Employee employee) {
+
+      Employee empObj = employeeRepository.findById(employee.getId().get());
+      if(empObj != null) {
+        empObj.setEmail(employee.getEmail());
+        empObj.setName(employee.getName());
+        empObj.setSalary(employee.getSalary());
+      }  
+      
+      return employeeRepository.save(emp);  
   } 
 
 }
