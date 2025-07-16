@@ -1,0 +1,16 @@
+package com.employee.service;
+
+import org.springframework.sterotype.Service; 
+
+@Service
+public class EmployeeServiceImpl implements EmployeeService {
+
+  @Autowired
+  private EmployeeRepository employeeRepository; 
+  
+  @Override 
+  public List<Employee> fetchAllEmployees() {
+    return employeeRepository.findAll();
+  }
+  
+} 
