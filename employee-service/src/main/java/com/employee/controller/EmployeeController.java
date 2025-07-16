@@ -31,13 +31,12 @@ public class EmployeeController {
       return ResponseEntity.ok(employeeService.createEmployee(employee));
   }
 
-  @PutMapping("/api/v1/employees")
+  @PutMapping("/api/v1/employees/{id}")
   public ResponseEntity<List<Employee>> updateEmployee(@PathVariable("id") Long id, @Requestbody Employee employee) {
       return ResponseEntity.ok(employeeService.updateEmployee(employee));
   }
 
-
-  @DeleteMapping("/api/v1/employees")
+  @DeleteMapping("/api/v1/employees/{id}")
   public ResponseEntity<List<Employee>> updateEmployee(@PathVariable("id") Long id) {
       return ResponseEntity.ok(employeeService.deleteEmployee(id));
   }
