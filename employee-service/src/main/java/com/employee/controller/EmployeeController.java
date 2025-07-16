@@ -7,6 +7,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
@@ -20,8 +22,13 @@ public class EmployeeController {
   }
 
    @PostMapping("/api/v1/employees")
-  public ResponseEntity<List<Employee>> createEmployee(@RequestBody Employee employee) {
+    public ResponseEntity<List<Employee>> createEmployee(@RequestBody Employee employee) {
       return ResponseEntity.ok(employeeService.createEmployee());
+  }
+
+  @PutMapping("/api/v1/employees")
+  public ResponseEntity<List<Employee>> updateEmployee(@PathVariable("id") Long id, @Requestbody Employee employee) {
+      return ResponseEntity.ok(employeeService.updateEmployee());
   }
   
 }
