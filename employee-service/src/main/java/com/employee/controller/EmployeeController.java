@@ -12,6 +12,10 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import com.employee.entity.Employee;
+import com.employee.service.EmployeeService;
+
+@CrossOrigin(maxAge = 3360)
 @RestController
 public class EmployeeController {
   @Autowired
