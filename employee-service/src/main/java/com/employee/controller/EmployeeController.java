@@ -28,12 +28,12 @@ public class EmployeeController {
 
    @PostMapping("/api/v1/employees")
     public ResponseEntity<List<Employee>> createEmployee(@RequestBody Employee employee) {
-      return ResponseEntity.ok(employeeService.createEmployee());
+      return ResponseEntity.ok(employeeService.createEmployee(employee));
   }
 
   @PutMapping("/api/v1/employees")
   public ResponseEntity<List<Employee>> updateEmployee(@PathVariable("id") Long id, @Requestbody Employee employee) {
-      return ResponseEntity.ok(employeeService.updateEmployee());
+      return ResponseEntity.ok(employeeService.updateEmployee(employee));
   }
 
 
