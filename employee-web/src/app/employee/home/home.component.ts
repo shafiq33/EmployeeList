@@ -18,3 +18,9 @@ import { EmployeeFormComponent } from '../employee-form/employee-form.component'
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
+export class HomeComponent {
+
+  displayedColumns = ['id', 'name', 'email', 'salary'];
+  dataSource = new MatTableDataSource<Employee>();
+  
+}
