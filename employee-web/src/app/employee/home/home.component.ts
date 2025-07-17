@@ -1,1 +1,20 @@
+import { AfterViewInit, Component, inject, OnInit, ViewChild } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
 
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatTableDataSource, MatTableModule } from '@angular/material/table';
+import { Employee } from '../employee';
+import { EmployeeService } from '../employee.service';
+import { MatSort, MatSortModule } from '@angular/material/sort';
+import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
+import { MatDialog } from '@angular/material/dialog';
+import { EmployeeFormComponent } from '../employee-form/employee-form.component';
+
+@Component({
+  selector: 'app-home',
+  standalone: true,
+  imports: [MatFormFieldModule,MatInputModule,MatButtonModule,MatTableModule,MatSortModule,MatPaginatorModule],
+  templateUrl: './home.component.html',
+  styleUrl: './home.component.css'
+})
