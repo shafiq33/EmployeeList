@@ -22,5 +22,6 @@ export class HomeComponent {
 
   displayedColumns = ['id', 'name', 'email', 'salary'];
   dataSource = new MatTableDataSource<Employee>();
+  employees: Employee[]=[];
   
 }
