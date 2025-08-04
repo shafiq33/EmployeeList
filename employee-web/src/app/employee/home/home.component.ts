@@ -26,6 +26,7 @@ export class HomeComponent implements OnInit{
   
   employees: Employee[]=[];
   filteredEmployees: Employee[]=[];
+  @ViewChild(MatSort) sort: any;
 
 
   ngOnInit(): void {
