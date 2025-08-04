@@ -36,6 +36,9 @@ export class HomeComponent implements OnInit{
   }
 
   searchEmployee(input: any) {
-    this.filteredEmployees = this.employees.filter(item => item.name.toLowwerCase().includes)
+    this.filteredEmployees = this.employees.filter(item => item.name.toLowwerCase().includes(input.toLowerCase())
+    || item.email.toLowerCase().includes(input.toLowerCase())
+    || item.salary.toString().includes(input))
+    this.dataSource = new MatTableDataSource<Employee>(this.filteredEmployees); 
   }
 }
