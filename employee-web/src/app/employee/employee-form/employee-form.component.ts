@@ -20,3 +20,10 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './employee-form.component.html',
   styleUrl: './employee-form.component.css'
 })
+
+export class EmployeeFormComponent {
+  readonly dialogRef=inject(MatDialogRef<EmployeeFormComponent>)
+  data=inject<Employee>(MAT_DIALOG_DATA);
+
+
+}
