@@ -27,13 +27,14 @@ export class HomeComponent implements AfterViewInit{
   employees: Employee[]=[];
   filteredEmployees: Employee[]=[];
   @ViewChild(MatSort) sort: any;
-
+  @ViewChild(MatPaginator) paginator: any;
 
   ngAfterViewInit(): void {
     this.employeeService.fetchAllEmployees().subscribe((data) => {
       this.employees=data;
       this.dataSource = new MatTableDataSource<Employee>(data);
       this.dataSource.sort = this.sort;
+      this.dataSource.paginator = this.paginator; 
     })
   }
 
