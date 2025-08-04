@@ -23,11 +23,23 @@ export class HomeComponent implements AfterViewInit{
   displayedColumns = ['id', 'name', 'email', 'salary'];
   dataSource = new MatTableDataSource<Employee>();
   constructor(private employeeService:EmployeeService) { }
+
+  name:String='';
+  email:String='';
+  salary:any=undefined;
+  
+  employee: Employee {
+    id:0,
+    name:'',
+    email:'',
+    salary:this.salary
+  }
   
   employees: Employee[]=[];
   filteredEmployees: Employee[]=[];
   @ViewChild(MatSort) sort: any;
   @ViewChild(MatPaginator) paginator: any;
+  readonly dialog-inject(MatDialog);
 
   ngAfterViewInit(): void {
     this.employeeService.fetchAllEmployees().subscribe((data) => {
@@ -44,5 +56,19 @@ export class HomeComponent implements AfterViewInit{
     || item.email.toLowerCase().includes(input.toLowerCase())
     || item.salary.toString().includes(input))
     this.dataSource = new MatTableDataSource<Employee>(this.filteredEmployees); 
+  }
+  openDialog(employee:Employee):void {
+    const dialogRef=this.dialog.open(EmployeeFormComponent, { 
+        data:employee
+      });
+
+  dialogRef.afterClosed().subscribe(result => {
+    if (result !== undefined) {
+       this.employee.id=result.id;
+       this.employee.name=result.name;
+       this.employee.email=result.email;
+       this.employee.salary=result.salary;
+      }
+    }
   }
 }
