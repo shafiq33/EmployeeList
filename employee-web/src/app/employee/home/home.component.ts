@@ -18,7 +18,7 @@ import { EmployeeFormComponent } from '../employee-form/employee-form.component'
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent implements OnInit{
+export class HomeComponent implements AfterViewInit{
 
   displayedColumns = ['id', 'name', 'email', 'salary'];
   dataSource = new MatTableDataSource<Employee>();
@@ -29,12 +29,14 @@ export class HomeComponent implements OnInit{
   @ViewChild(MatSort) sort: any;
 
 
-  ngOnInit(): void {
+  ngAfterViewInit(): void {
     this.employeeService.fetchAllEmployees().subscribe((data) => {
       this.employees=data;
       this.dataSource = new MatTableDataSource<Employee>(data);
+      this.dataSource.sort = this.sort;
     })
   }
+
 
   searchEmployee(input: any) {
     this.filteredEmployees = this.employees.filter(item => item.name.toLowwerCase().includes(input.toLowerCase())
