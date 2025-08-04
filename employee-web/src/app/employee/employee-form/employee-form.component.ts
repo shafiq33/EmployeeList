@@ -1,1 +1,22 @@
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
+import { MAT_DIALOG_DATA, MatDialogActions, MatDialogContent, MatDialogModule, MatDialogRef, MatDialogTitle } from '@angular/material/dialog';
+import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { Employee } from '../employee';
+import { EmployeeService } from '../employee.service';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
+@Component({
+  selector: 'app-employee-form',
+  standalone: true,
+  imports: [MatDialogModule,MatDialogTitle,MatDialogContent,MatDialogActions,
+    MatFormFieldModule,MatInputModule,MatIconModule,MatButtonModule,
+    CommonModule,FormsModule
+  ],
+  changeDetection:ChangeDetectionStrategy.OnPush,
+  templateUrl: './employee-form.component.html',
+  styleUrl: './employee-form.component.css'
+})
