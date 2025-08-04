@@ -25,6 +25,7 @@ export class HomeComponent implements OnInit{
   constructor(private employeeService:EmployeeService) { }
   
   employees: Employee[]=[];
+  filteredEmployees: Employee[]=[];
 
 
   ngOnInit(): void {
@@ -32,5 +33,9 @@ export class HomeComponent implements OnInit{
       this.employees=data;
       this.dataSource = new MatTableDataSource<Employee>(data);
     })
+  }
+
+  searchEmployee(input: any) {
+    this.filteredEmployees = this.employees.filter(item => item.name.toLowwerCase().includes)
   }
 }
