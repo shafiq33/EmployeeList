@@ -29,7 +29,24 @@ export class EmployeeFormComponent {
 
 addOrEditEmployee(employee:Employee) {
     if(employee.id!==0) {
-      //this.employeeService.
-    }
+      this.employeeService.updateEmployee(employee).subscribe({
+      next:(data)=>{
+        console.log("Employee Updated Successfully");
+        window.location.reload();
+      },
+      error:(err)=>{
+        console.log(err);
+      }
+    })
+  } else {
+       this.employeeService.createEmployee(employee).subscribe({
+      next:(data)=>{
+        console.log("Employee Created Successfully");
+        window.location.reload();
+      },
+      error:(err)=>{
+        console.log(err);
+      }
+    })
   }
 }
