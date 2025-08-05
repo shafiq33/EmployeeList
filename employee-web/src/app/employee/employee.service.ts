@@ -20,5 +20,10 @@ export class EmployeeService {
   createEmployee(data:Employee):  {
      return this._httpClient.post<Employee[]>(`${this.baseUrl}`, data)
   }
+
+  updateEmployee(data:Employee):  {
+     return this._httpClient.post<Employee[]>(`${this.baseUrl}/${data.id}`, data)
+  }
+  
   
 }
