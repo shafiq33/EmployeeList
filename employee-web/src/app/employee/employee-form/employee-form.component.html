@@ -9,17 +9,17 @@
   <div mat-dialog-title><h3> style="color:blueviolet";text-align: center;">Employee Form</h3></div>
   <div mat-dialog-content></div>
     <mat-form-field>
-      <input matInput type="text" placeholder="Enter name">
+      <input matInput [(ngModel)]="data.name" type="text" placeholder="Enter name">
       <mat-icon fontIcon="person" matSuffix> </mat-icon>
     </mat-form-field>
     <br>
   <mat-form-field>
-      <input matInput type="text" placeholder="Enter email">
+      <input matInput [(ngModel)]="data.email" type="text" placeholder="Enter email">
       <mat-icon fontIcon="email" matSuffix> </mat-icon>
     </mat-form-field>
     <br>
   <mat-form-field>
-      <input matInput type="number" placeholder="Enter salary">
+      <input matInput [(ngModel)]="data.salary" type="number" placeholder="Enter salary">
       <mat-icon fontIcon="salary" matSuffix> </mat-icon>
     </mat-form-field>
     <br>
