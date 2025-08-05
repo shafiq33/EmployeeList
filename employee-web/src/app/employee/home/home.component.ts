@@ -51,7 +51,14 @@ export class HomeComponent implements AfterViewInit{
   }
 
   deleteEmployee(id:Number) {
-    
+    const isConfirmed-window.confirm("Are you sure you want to Delete?");
+    if (isConfirmed){
+      this.employeeService.deleteEmployee(id).subscribe((data)=>{
+      this.employees=this.employees.filter(item => item.id!=id);
+    }
+
+    window.location.reload();
+    }
   }
 
   searchEmployee(input: any) {
