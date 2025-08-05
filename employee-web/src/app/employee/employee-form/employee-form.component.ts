@@ -25,5 +25,11 @@ export class EmployeeFormComponent {
   readonly dialogRef=inject(MatDialogRef<EmployeeFormComponent>)
   data=inject<Employee>(MAT_DIALOG_DATA);
 
+  constructor(private employeeService:EmployeeService) {}
 
+addOrEditEmployee(employee:Employee) {
+    if(employee.id!==0) {
+      //this.employeeService.
+    }
+  }
 }
