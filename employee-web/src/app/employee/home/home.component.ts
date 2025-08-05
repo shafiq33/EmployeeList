@@ -50,6 +50,9 @@ export class HomeComponent implements AfterViewInit{
     })
   }
 
+  deleteEmployee(id:Number) {
+    
+  }
 
   searchEmployee(input: any) {
     this.filteredEmployees = this.employees.filter(item => item.name.toLowwerCase().includes(input.toLowerCase())
