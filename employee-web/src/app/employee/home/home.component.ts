@@ -20,7 +20,7 @@ import { EmployeeFormComponent } from '../employee-form/employee-form.component'
 })
 export class HomeComponent implements AfterViewInit{
 
-  displayedColumns = ['id', 'name', 'email', 'salary'];
+  displayedColumns = ['id', 'name', 'email', 'salary', 'edit', 'delete'];
   dataSource = new MatTableDataSource<Employee>();
   constructor(private employeeService:EmployeeService) { }
 
