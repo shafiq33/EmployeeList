@@ -19,19 +19,21 @@ This project is a full-stack employee management system that enables organizatio
 
 
 <h2>Demo</h2>
-<img width="1906" height="908" alt="image" src="https://github.com/shafiq33/CRUD---FULL-STACK-Employeee-List-/blob/main/Demo1.png" />
+<img width="1906" height="908" alt="image" src="https://github.com/shafiq33/EmployeeList/blob/main/Demo1.png" />
+<img width="1906" height="908" alt="image" src="https://github.com/shafiq33/EmployeeList/blob/main/Demo2.png" />
+<img width="1906" height="908" alt="image" src="https://github.com/shafiq33/EmployeeList/blob/main/Demo3.png" />
 
 <h2>How to run</h2>
   <h3>1. Clone the repository:</h3> 
-   git clone https://github.com/yourusername/
+   git clone https://github.com/shafiq33/EmployeeList.git <br>
    cd myangular-springboot-mysql
 
 <h3>2. Start the Spring Boot backend:</h3>
- cd backend
+ cd backend <br>
 ./mvnw spring-boot:run
 
 <h3>3. Start the Angular frontend in a new terminal:</h3>
-npm install
+npm install <br>
 npx ng serve
 
 <h3>4. Open your browser:</h3>
